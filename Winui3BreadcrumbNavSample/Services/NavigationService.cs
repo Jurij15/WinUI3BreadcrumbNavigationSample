@@ -72,6 +72,7 @@ namespace Winui3BreadcrumbNavSample.Services
 
         public static void NavigationGoBack(int index)
         {
+            //THIS DOES NOT WORK!!
             //we need to somehow remove all items from the array 
             int indexToRemoveAfter = index;
 
