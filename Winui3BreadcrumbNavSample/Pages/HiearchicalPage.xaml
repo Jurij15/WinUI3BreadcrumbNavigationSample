@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Winui3BreadcrumbNavSample.Pages.HiearchicalPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Winui3BreadcrumbNavSample.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Margin="58, 42, 58,0">
+        <TextBlock Text="This page has been navigated to Hiearchically" Style="{ThemeResource BodyTextBlockStyle}"/>
+        <Button Margin="4" Content="Navigate Again" Click="Button_Click"/>
+    </Grid>
+</Page>

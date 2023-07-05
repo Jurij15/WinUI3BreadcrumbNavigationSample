@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winui3BreadcrumbNavSample", "Winui3BreadcrumbNavSample\Winui3BreadcrumbNavSample.csproj", "{14F8D883-A498-4FCC-B190-E69C2A885A6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|ARM64.Build.0 = Debug|ARM64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|x64.ActiveCfg = Debug|x64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|x64.Build.0 = Debug|x64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|x64.Deploy.0 = Debug|x64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|x86.ActiveCfg = Debug|x86
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|x86.Build.0 = Debug|x86
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Debug|x86.Deploy.0 = Debug|x86
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|ARM64.ActiveCfg = Release|ARM64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|ARM64.Build.0 = Release|ARM64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|ARM64.Deploy.0 = Release|ARM64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|x64.ActiveCfg = Release|x64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|x64.Build.0 = Release|x64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|x64.Deploy.0 = Release|x64
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|x86.ActiveCfg = Release|x86
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|x86.Build.0 = Release|x86
+		{14F8D883-A498-4FCC-B190-E69C2A885A6B}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88F4C564-4AB4-4197-B96F-214852C5FDFC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Winui3BreadcrumbNavSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Winui3BreadcrumbNavSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
