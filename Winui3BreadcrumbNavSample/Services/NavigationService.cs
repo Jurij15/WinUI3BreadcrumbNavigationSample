@@ -2,6 +2,7 @@
 using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.VisualBasic;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -64,10 +65,24 @@ namespace Winui3BreadcrumbNavSample.Services
             }
         }
 
+        private void RemoveItemsFromBreadcrumbs(int index)
+        {
+
+        }
+
         public static void NavigationGoBack(int index)
         {
-            //we need to somehow remove all items from the array
-            BreadCrumbs.RemoveAt(index);
+            //we need to somehow remove all items from the array 
+            int indexToRemoveAfter = index;
+
+            if (indexToRemoveAfter < BreadCrumbs.Count - 1)
+            {
+                int itemsToRemove = BreadCrumbs.Count - indexToRemoveAfter -1;
+                for (int i = 0; i < itemsToRemove; i++)
+                {
+                    BreadCrumbs.RemoveAt(indexToRemoveAfter + 1);
+                }
+            }
             //navigate
             Type page = MainFrame.BackStack[index].SourcePageType;
             SlideNavigationTransitionInfo info = new SlideNavigationTransitionInfo();
