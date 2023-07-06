@@ -29,8 +29,6 @@ namespace Winui3BreadcrumbNavSample.Pages
         {
             this.InitializeComponent();
 
-            NavigationService.UpdateBreadcrumb("Settings", true);
-
             if (NavigationService.MainNavigation.PaneDisplayMode == NavigationViewPaneDisplayMode.Left)
             {
                 LeftRadio.IsChecked = true;

@@ -27,13 +27,11 @@ namespace Winui3BreadcrumbNavSample.Pages
         public HiearchicalPage()
         {
             this.InitializeComponent();
-
-            NavigationService.UpdateBreadcrumb("Hiearchical Page", false);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.NavigateHiearchical(typeof(HiearchicalPage));
+            NavigationService.Navigate(typeof(HiearchicalPage), "Hiearchical Page", false);
         }
     }
 }

@@ -6,4 +6,5 @@
     
     <x:Double x:Key="BreadcrumbBarChevronFontSize">12</x:Double>
     <Thickness x:Key="BreadcrumbBarChevronPadding">12,0</Thickness>
+    
 </ResourceDictionary>

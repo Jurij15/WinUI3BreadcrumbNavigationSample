@@ -16,6 +16,7 @@ using Windows.Foundation.Collections;
 using Winui3BreadcrumbNavSample.Assets;
 using Winui3BreadcrumbNavSample.Pages;
 using Winui3BreadcrumbNavSample.Services;
+using static Winui3BreadcrumbNavSample.Services.NavigationService;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -41,27 +42,32 @@ namespace Winui3BreadcrumbNavSample
 
         private void MainNavigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
+            MainFrame.BackStack.Clear();
             if (args.SelectedItemContainer == Page1Item)
             {
-                NavigationService.NavigateNormal(typeof(Page1));
+                NavigationService.Navigate(typeof(Page1), "Page 1", true);
             }
             if (args.SelectedItemContainer == Page2Item)
             {
-                NavigationService.NavigateNormal(typeof(Page2));
+                NavigationService.Navigate(typeof(Page2), "Page 2", true);
             }
             if (args.SelectedItemContainer == Page3Item)
             {
-                NavigationService.NavigateNormal(typeof(Page3));
+                NavigationService.Navigate(typeof(Page3), "Page 3", true);
             }
             if (args.IsSettingsSelected)
             {
-                NavigationService.NavigateNormal(typeof(SettingsPage));
+                NavigationService.Navigate(typeof(SettingsPage), "Settings", true);
             }
         }
 
         private void MainBreadcrumb_ItemClicked(BreadcrumbBar sender, BreadcrumbBarItemClickedEventArgs args)
         {
-            NavigationService.NavigationGoBack(args.Index);
+            if (args.Index < NavigationService.BreadCrumbs.Count - 1)
+            {
+                var crumb = (Breadcrumb)args.Item;
+                crumb.NavigateToFromBreadcrumb(args.Index);
+            }
         }
     }
 }
