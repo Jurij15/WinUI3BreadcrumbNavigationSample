@@ -8,7 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Margin="58, 42, 58,0">
-        <Button Content="Navigate" Click="Button_Click"/>
+    <Grid Margin="58, 42, 58,0" RowSpacing="4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Navigate" Click="Button_Click" Grid.Row="0"/>
     </Grid>
 </Page>

@@ -45,19 +45,19 @@ namespace Winui3BreadcrumbNavSample
             MainFrame.BackStack.Clear();
             if (args.SelectedItemContainer == Page1Item)
             {
-                NavigationService.Navigate(typeof(Page1), "Page 1", true);
+                NavigationService.Navigate(typeof(Page1), "Page 1", true, Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect.FromBottom);
             }
             if (args.SelectedItemContainer == Page2Item)
             {
-                NavigationService.Navigate(typeof(Page2), "Page 2", true);
+                NavigationService.Navigate(typeof(Page2), "Page 2", true, Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect.FromBottom);
             }
             if (args.SelectedItemContainer == Page3Item)
             {
-                NavigationService.Navigate(typeof(Page3), "Page 3", true);
+                NavigationService.Navigate(typeof(Page3), "Page 3", true, Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect.FromBottom);
             }
             if (args.IsSettingsSelected)
             {
-                NavigationService.Navigate(typeof(SettingsPage), "Settings", true);
+                NavigationService.Navigate(typeof(SettingsPage), "Settings", true, Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect.FromBottom);
             }
         }
 
