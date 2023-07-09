@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.WindowManagement;
 using Winui3BreadcrumbNavSample.Services;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -24,6 +25,7 @@ namespace Winui3BreadcrumbNavSample.Pages
     /// </summary>
     public sealed partial class SettingsPage : Page
     {
+        public static Window MainWindow;
         bool InitFinished = false;
         public SettingsPage()
         {
@@ -36,6 +38,15 @@ namespace Winui3BreadcrumbNavSample.Pages
             else if (NavigationService.MainNavigation.PaneDisplayMode == NavigationViewPaneDisplayMode.Top)
             {
                 TopRadio.IsChecked = true;
+            }
+
+            if (ThemeService.IsDarkTheme())
+            {
+                DarkRadio.IsChecked = true;
+            }
+            else if (ThemeService.IsLightTheme())
+            {
+                LightRadio.IsChecked = true;
             }
 
             InitFinished = true;
@@ -51,6 +62,59 @@ namespace Winui3BreadcrumbNavSample.Pages
         {
             if (!InitFinished) { return; }
             NavigationService.MainNavigation.PaneDisplayMode = NavigationViewPaneDisplayMode.Top;
+        }
+
+        private void BaseRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SystemBackdrop = null;
+            (MainWindow.Content as Grid).Background = new SolidColorBrush(Microsoft.UI.Colors.Transparent);
+            MicaBackdrop micaBackdrop = new MicaBackdrop();
+            micaBackdrop.Kind = Microsoft.UI.Composition.SystemBackdrops.MicaKind.Base;
+
+            MainWindow.SystemBackdrop = micaBackdrop;
+        }
+
+        private void BaseAltRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SystemBackdrop = null;
+            (MainWindow.Content as Grid).Background = new SolidColorBrush(Microsoft.UI.Colors.Transparent);
+            MicaBackdrop micaBackdrop = new MicaBackdrop();
+            micaBackdrop.Kind = Microsoft.UI.Composition.SystemBackdrops.MicaKind.BaseAlt;
+
+            MainWindow.SystemBackdrop = micaBackdrop;
+        }
+
+        private void AcrylicRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SystemBackdrop = null;
+            (MainWindow.Content as Grid).Background = new SolidColorBrush(Microsoft.UI.Colors.Transparent);
+            DesktopAcrylicBackdrop backdrop = new DesktopAcrylicBackdrop();
+
+            MainWindow.SystemBackdrop = backdrop;
+        }
+
+        private void NoneRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow.SystemBackdrop = null;
+            (MainWindow.Content as Grid).Background = App.Current.Resources["ApplicationPageBackgroundThemeBrush"] as SolidColorBrush;
+        }
+
+        private void DarkRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!InitFinished)
+            {
+                return;
+            }
+            ThemeService.ChangeTheme(ElementTheme.Dark);
+        }
+
+        private void LightRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!InitFinished)
+            {
+                return;
+            }
+            ThemeService.ChangeTheme(ElementTheme.Light);
         }
     }
 }

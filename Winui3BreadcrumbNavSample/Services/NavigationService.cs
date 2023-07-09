@@ -94,9 +94,18 @@ namespace Winui3BreadcrumbNavSample.Services
             BreadCrumbs.Add(new Breadcrumb(BreadcrumbItemLabel, TargetPageType));
 
             SlideNavigationTransitionInfo info = new SlideNavigationTransitionInfo();
-            info.Effect = SlideNavigationTransitionEffect.FromRight;
+            if (ClearNavigation)
+            {
+                info.Effect = SlideNavigationTransitionEffect.FromBottom; //navigating fresh
+            }
+            else
+            {
+                info.Effect = SlideNavigationTransitionEffect.FromRight;
+            }
 
             UpdateBreadcrumb();
+            ChangeBreadcrumbVisibility(true);
+
             MainFrame.Navigate(TargetPageType, null, info);
         }
         public static void Navigate(Type TargetPageType, string BreadcrumbItemLabel, bool ClearNavigation, SlideNavigationTransitionEffect TransitionEffect)

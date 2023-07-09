@@ -38,6 +38,8 @@ namespace Winui3BreadcrumbNavSample
 
             //initialize navigation
             NavigationService.Init(MainNavigation, MainBreadcrumb, MainFrame);
+
+            SettingsPage.MainWindow = this;
         }
 
         private void MainNavigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
