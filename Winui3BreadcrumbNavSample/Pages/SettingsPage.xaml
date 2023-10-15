@@ -1,47 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Page
     x:Class="Winui3BreadcrumbNavSample.Pages.SettingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Winui3BreadcrumbNavSample.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Winui3BreadcrumbNavSample.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:slocal="using:Winui3BreadcrumbNavSample.Services"
+    slocal:NavigationService.ClearNavigationProperty="True"
+    slocal:NavigationService.IsHeaderVisibleProperty="True"
+    slocal:NavigationService.PageTitleProperty="Settings"
     mc:Ignorable="d">
 
-    <Grid Margin="58, 42, 58,0" RowSpacing="4">
+    <Grid Margin="58,42,58,0" RowSpacing="4">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Spacing="4">
-            <TextBlock Text="Theme" FontWeight="Medium" FontSize="16"/>
+            <TextBlock
+                FontSize="16"
+                FontWeight="Medium"
+                Text="Theme" />
             <StackPanel Spacing="2">
-                <RadioButton x:Name="DarkRadio" Content="Dark" Checked="DarkRadio_Checked"/>
-                <RadioButton x:Name="LightRadio" Content="Light" Checked="LightRadio_Checked"/>
-            </StackPanel>
-        </StackPanel>
-        
-        <StackPanel Grid.Row="1" Spacing="4">
-            <TextBlock Text="Pane Style" FontWeight="Medium" FontSize="16"/>
-            <StackPanel Spacing="2">
-                <RadioButton x:Name="LeftRadio" Content="Left" Checked="LeftRadio_Checked"/>
-                <RadioButton x:Name="TopRadio" Content="Top" Checked="TopRadio_Checked"/>
+                <RadioButton
+                    x:Name="DarkRadio"
+                    Checked="DarkRadio_Checked"
+                    Content="Dark" />
+                <RadioButton
+                    x:Name="LightRadio"
+                    Checked="LightRadio_Checked"
+                    Content="Light" />
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Spacing="4" Margin="0,4,0,0">
-            <TextBlock Text="Backdrop" FontWeight="Medium" FontSize="16"/>
+        <StackPanel Grid.Row="1" Spacing="4">
+            <TextBlock
+                FontSize="16"
+                FontWeight="Medium"
+                Text="Pane Style" />
             <StackPanel Spacing="2">
-                <RadioButton x:Name="BaseRadio" Content="Base" Checked="BaseRadio_Checked"/>
-                <RadioButton x:Name="BaseAltRadio" Content="BaseAlt" Checked="BaseAltRadio_Checked"/>
-                <RadioButton x:Name="AcrylicRadio" Content="Acrylic" Checked="AcrylicRadio_Checked"/>
-                <RadioButton x:Name="NoneRadio" Content="None" Checked="NoneRadio_Checked"/>
+                <RadioButton
+                    x:Name="LeftRadio"
+                    Checked="LeftRadio_Checked"
+                    Content="Left" />
+                <RadioButton
+                    x:Name="TopRadio"
+                    Checked="TopRadio_Checked"
+                    Content="Top" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="2"
+            Margin="0,4,0,0"
+            Spacing="4">
+            <TextBlock
+                FontSize="16"
+                FontWeight="Medium"
+                Text="Backdrop" />
+            <StackPanel Spacing="2">
+                <RadioButton
+                    x:Name="BaseRadio"
+                    Checked="BaseRadio_Checked"
+                    Content="Base" />
+                <RadioButton
+                    x:Name="BaseAltRadio"
+                    Checked="BaseAltRadio_Checked"
+                    Content="BaseAlt" />
+                <RadioButton
+                    x:Name="AcrylicRadio"
+                    Checked="AcrylicRadio_Checked"
+                    Content="Acrylic" />
+                <RadioButton
+                    x:Name="NoneRadio"
+                    Checked="NoneRadio_Checked"
+                    Content="None" />
             </StackPanel>
         </StackPanel>
     </Grid>

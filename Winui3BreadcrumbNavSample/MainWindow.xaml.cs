@@ -47,19 +47,19 @@ namespace Winui3BreadcrumbNavSample
             MainFrame.BackStack.Clear();
             if (args.SelectedItemContainer == Page1Item)
             {
-                NavigationService.Navigate(typeof(Page1), "Page 1", true, Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect.FromBottom);
+                NavigationService.Navigate(typeof(Page1), NavigateAnimationType.Entrance);
             }
             if (args.SelectedItemContainer == Page2Item)
             {
-                NavigationService.Navigate(typeof(Page2), "Page 2", true, Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect.FromBottom);
+                NavigationService.Navigate(typeof(Page2), NavigateAnimationType.Entrance);
             }
             if (args.SelectedItemContainer == Page3Item)
             {
-                NavigationService.Navigate(typeof(Page3), "Page 3", true, Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect.FromBottom);
+                NavigationService.Navigate(typeof(Page3), NavigateAnimationType.Entrance);
             }
             if (args.IsSettingsSelected)
             {
-                NavigationService.Navigate(typeof(SettingsPage), "Settings", true, Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect.FromBottom);
+                NavigationService.Navigate(typeof(SettingsPage), NavigateAnimationType.Entrance);
             }
         }
 
@@ -68,8 +68,13 @@ namespace Winui3BreadcrumbNavSample
             if (args.Index < NavigationService.BreadCrumbs.Count - 1)
             {
                 var crumb = (Breadcrumb)args.Item;
-                crumb.NavigateToFromBreadcrumb(args.Index);
+                NavigationService.NavigateFromBreadcrumb(crumb.Page, args.Index); 
             }
+        }
+
+        private void MainNavigation_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainNavigation.SelectedItem = Page1Item;
         }
     }
 }

@@ -1,19 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Page
     x:Class="Winui3BreadcrumbNavSample.Pages.HiearchicalPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Winui3BreadcrumbNavSample.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Winui3BreadcrumbNavSample.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:slocal="using:Winui3BreadcrumbNavSample.Services"
+    slocal:NavigationService.ClearNavigationProperty="False"
+    slocal:NavigationService.IsHeaderVisibleProperty="True"
+    slocal:NavigationService.PageTitleProperty="Hiearchical Page"
     mc:Ignorable="d">
 
-    <Grid Margin="58, 42, 58,0" RowSpacing="4">
+    <Grid Margin="58,42,58,0" RowSpacing="4">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Text="This page has been navigated to hierarchically" Style="{ThemeResource BodyTextBlockStyle}" Grid.Row="0"/>
-        <Button Margin="4" Content="Navigate Again" Click="Button_Click" Grid.Row="1"/>
+        <TextBlock
+            Grid.Row="0"
+            Style="{ThemeResource BodyTextBlockStyle}"
+            Text="This page has been navigated to hierarchically" />
+        <Button
+            Grid.Row="1"
+            Margin="4"
+            Click="Button_Click"
+            Content="Navigate Again" />
     </Grid>
 </Page>

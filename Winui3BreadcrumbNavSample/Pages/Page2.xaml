@@ -1,18 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Page
     x:Class="Winui3BreadcrumbNavSample.Pages.Page2"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Winui3BreadcrumbNavSample.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Winui3BreadcrumbNavSample.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:slocal="using:Winui3BreadcrumbNavSample.Services"
+    slocal:NavigationService.ClearNavigationProperty="True"
+    slocal:NavigationService.IsHeaderVisibleProperty="True"
+    slocal:NavigationService.PageTitleProperty="Page 2"
     mc:Ignorable="d">
 
-    <Grid Margin="58, 42, 58,0" RowSpacing="4">
+    <Grid Margin="58,42,58,0" RowSpacing="4">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Content="Navigate" Click="Button_Click" Grid.Row="0"/>
+        <Button
+            Grid.Row="0"
+            Click="Button_Click"
+            Content="Navigate" />
     </Grid>
 </Page>

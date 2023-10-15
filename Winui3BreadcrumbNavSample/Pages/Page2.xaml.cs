@@ -31,7 +31,7 @@ namespace Winui3BreadcrumbNavSample.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(typeof(HiearchicalPage), "Hiearchical Page", false);
+            NavigationService.Navigate(typeof(HiearchicalPage), NavigationService.NavigateAnimationType.SlideFromRight);
         }
     }
 }
